@@ -40,20 +40,10 @@ public class Field extends JPanel {
     public static void resetButtons() {
         for(Cell b:(List.of(buttonA3,buttonB3,buttonC3,
                 buttonA2,buttonB2,buttonC2,buttonA1,buttonB1,buttonC1))) {
-            buttonA1.setText(" ");
+            b.setText(" ");
         }
-        /*buttonA3.setText(" ");
-        buttonB3.setText(" ");
-        buttonC3.setText(" ");
-        buttonA2.setText(" ");
-        buttonB2.setText(" ");
-        buttonC2.setText(" ");
-        buttonA1.setText(" ");
-        buttonB1.setText(" ");
-        buttonC1.setText(" ");*/
         freeButtons.clear();
         freeButtons.addAll(List.of(buttonA3,buttonB3,buttonC3,buttonA2,buttonB2,buttonC2,buttonA1,buttonB1,buttonC1));
-
     }
 
     public static String isThereWinner() {

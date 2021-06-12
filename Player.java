@@ -9,20 +9,12 @@ public class Player {
         this.sign = sign;
 
     }
-    public void setSign(String sign){
-        this.sign = sign;
-    }
     public String getSign() {
         return sign;
     }
 
     public String getName(){
         return this.name;
-    }
-
-
-    public String getSignString() {
-        return " "+sign;
     }
 
     public void setName(String text) {

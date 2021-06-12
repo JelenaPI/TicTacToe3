@@ -26,11 +26,11 @@ public class TicTacToe extends JFrame implements WindowListener, ActionListener 
 
     public TicTacToe(){
         super();
-        buttonPlayer1 = new JButton("Player1");
+        buttonPlayer1 = new JButton("Human");
         buttonPlayer1.setName("ButtonPlayer1");
         buttonPlayer1.addActionListener(this);
 
-        buttonPlayer2 = new JButton("Player2");
+        buttonPlayer2 = new JButton("Human");
         buttonPlayer2.setName("ButtonPlayer2");
         buttonPlayer2.addActionListener(this);
 
@@ -103,11 +103,11 @@ public class TicTacToe extends JFrame implements WindowListener, ActionListener 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == buttonReset) {
             if(buttonReset.getText().equals("Reset")) {
+                labelStatus.setText("Game is not started");
+                buttonReset.setText("Start");
                 endOfGame = false;
                 buttonPlayer1.setEnabled(true);
                 buttonPlayer2.setEnabled(true);
-                buttonReset.setText("Start");
-                labelStatus.setText("Game is not started");
                 Field.resetButtons();
                 player = player1;
                 counter = 0;
@@ -133,10 +133,13 @@ public class TicTacToe extends JFrame implements WindowListener, ActionListener 
                     changePlayer();
                 }
             }
-        } else if (e.getSource() == buttonPlayer1) {
+        }
+        else if (e.getSource() == buttonPlayer1) {
             buttonPlayer1.setText(buttonPlayer1.getText().equals("Robot") ? "Human" : "Robot");
+            player1.setName(buttonPlayer1.getText());
         } else if (e.getSource() == buttonPlayer2) {
             buttonPlayer2.setText(buttonPlayer2.getText().equals("Robot") ? "Human" : "Robot");
+            player2.setName(buttonPlayer2.getText());
         }
     }
 
